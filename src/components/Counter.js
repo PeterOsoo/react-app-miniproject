@@ -4,7 +4,7 @@ export const Counter = () => {
 	const [counter, setCounter] = useState(0)
 
 	useEffect(() => {
-		console.log("App loaded")
+		console.log("App loaded - useEffect Hook")
 		setCounter(26)
 	}, [])
 
