@@ -1,5 +1,3 @@
-import React from "react"
-
 export const Hello = () => {
 	const name = " Jaka"
 	let isLoggedIn = false
