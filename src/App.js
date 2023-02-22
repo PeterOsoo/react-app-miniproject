@@ -1,6 +1,6 @@
 import "./App.css"
-import { Counter } from "./components/Counter"
-import { Hello } from "./components/Hello"
+// import { Counter } from "./components/Counter"
+// import { Hello } from "./components/Hello"
 import Movie from "./components/Movie"
 
 const App = () => {
@@ -8,7 +8,6 @@ const App = () => {
 
 	return (
 		<div className="App">
-			<h2>New App</h2>
 			<Movie />
 			{/* <Hello />
 			<Counter /> */}
