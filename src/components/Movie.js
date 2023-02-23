@@ -1,4 +1,4 @@
-import { useEffect } from "react"
+import { useEffect, useState } from "react"
 
 import SearchIcon from "../search.svg"
 import MovieCard from "./MovieCard"
@@ -15,11 +15,14 @@ const Movie = () => {
 			"https://m.media-amazon.com/images/M/MV5BYjRhM2YwYjktMWRjNy00ZTczLWJmN2UtMTc3MzViMGVkMjRjXkEyXkFqcGdeQXVyMTkxMzg5MA@@._V1_SX300.jpg",
 	}
 
+	const [movies, setMovies] = useState([])
+
 	const searchMovies = async title => {
 		const response = await fetch(`${API_URL}&S=${title}`)
 
 		const data = await response.json()
 		console.log(data.Search)
+		setMovies(data.Search)
 	}
 	useEffect(() => {
 		searchMovies("Sistas")
@@ -28,7 +31,6 @@ const Movie = () => {
 	return (
 		<div className="app">
 			<h1>Movie Dala</h1>
-
 			{/* search  */}
 			<div className="search">
 				<input
@@ -39,11 +41,16 @@ const Movie = () => {
 				/>
 				<img src={SearchIcon} alt="search" onClick={() => {}} />
 			</div>
-
-			{/* container  */}
-			<div className="container">
-				<MovieCard movie1={movie1} />
-			</div>
+			{movies.length > 0 ? (
+				<div className="container">
+					{/* <MovieCard movie1={movies[0]} /> */}
+					<MovieCard movie1={movie1} />
+				</div>
+			) : (
+				<div className="empty">
+					<h2>No movies found</h2>
+				</div>
+			)}
 		</div>
 	)
 }
