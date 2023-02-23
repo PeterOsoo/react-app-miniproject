@@ -1,7 +1,7 @@
 import React from "react"
 
 const MovieCard = props => {
-	const { Year, Poster, Title, Type } = props.movie1
+	const { Year, Poster, Title, Type } = props.movie
 
 	return (
 		<div className="movie">

@@ -25,7 +25,7 @@ const Movie = () => {
 		setMovies(data.Search)
 	}
 	useEffect(() => {
-		searchMovies("Sistas")
+		searchMovies("tyler perry")
 	}, [])
 
 	return (
@@ -43,8 +43,9 @@ const Movie = () => {
 			</div>
 			{movies.length > 0 ? (
 				<div className="container">
-					{/* <MovieCard movie1={movies[0]} /> */}
-					<MovieCard movie1={movie1} />
+					{movies.map(movie => (
+						<MovieCard movie={movie} />
+					))}
 				</div>
 			) : (
 				<div className="empty">
