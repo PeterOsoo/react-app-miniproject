@@ -26,7 +26,7 @@ const Movie = () => {
 			<div className="search">
 				<input
 					type="text"
-					placeholder="Search for Movies"
+					placeholder="Search for Movies.."
 					value={searchTerm}
 					onChange={e => setSearchTerm(e.target.value)}
 				/>
